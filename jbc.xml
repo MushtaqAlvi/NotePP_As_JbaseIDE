@@ -1,0 +1,1768 @@
+<?xml version="1.0" encoding="Windows-1252" ?>
+<!--
+  @build by moboan - http://www.ambdev.net
+  @version 1.0
+-->
+<NotepadPlus>
+    <AutoComplete language="jbc">
+        <Environment ignoreCase="yes" startFunc="(" stopFunc=")" paramSeparator="," additionalWordChar = "@$#" terminal=";"/>
+        <KeyWord name="#INCLUDE" func="yes">
+            <Overload retVal=""  descr="&#x0a;Direct the compiler to insert the source code in the program and compile it&#x0a;with the main program.">
+                <Param name="#INCLUDE [filename] program"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="$INCLUDE" func="yes">
+            <Overload retVal=""  descr="&#x0a;Direct the compiler to insert the source code in the record program and compile&#x0a;it with the main program.">
+                <Param name="$INCLUDE [filename] program"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="$INSERT" func="yes">
+            <Overload retVal=""  descr="&#x0a;Direct the compiler to insert the source code contained in the file specified&#x0a;by filename and compile it with the main program.">
+                <Param name="$INSERT filename"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="@" func="yes">
+            <Overload retVal=""  descr="&#x0a;This function is used to position the cursor to a specific point on the&#x0a;terminal screen.">
+                <Param name="col"/>
+                <Param name="{row}"/>
+            </Overload>
+            <Overload retVal=""  descr="&#x0a;This function is used to output control sequences according to the capabilities&#x0a;of the terminal.">
+                <Param name="ScreenCode"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ABORT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ABORT statement terminates the program running as well as the program that&#x0a;called it.">
+                <Param name="ABORT {message.number{, exprn ...}}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ABS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ABS function will return the mathematical absolute of the ()expression.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ABSS" func="yes">
+            <Overload retVal=""  descr="&#x0a;Use the ABSS function to return the absolute values of all the elements in a&#x0a;dynamic array.">
+                <Param name="dynamic array"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ADDS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ADDS function returns a dynamic array, the content of which is derived by&#x0a;adding corresponding elements from two dynamic arrays supplied as arguments.">
+                <Param name="DynArr1"/>
+                <Param name="DynArr2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ALPHA" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ALPHA function will check that the expression consists entirely of&#x0a;alphabetic characters.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ANDS" func="yes">
+            <Overload retVal=""  descr="&#x0a;Use the ANDS function to create a dynamic array of the logical AND of&#x0a;corresponding elements of two dynamic arrays.">
+                <Param name="array1"/>
+                <Param name="array2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ASCII" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ASCII function converts all the characters in the expression from the&#x0a;EBCDIC character set to the ASCII character set.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ASSIGNED" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ASSIGNED function returns a Boolean TRUE or FALSE result depending on&#x0a;whether or not a variable has been assigned a value.">
+                <Param name="var"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="BITAND" func="yes">
+            <Overload retVal=""  descr="&#x0a;Use the BITAND function to perform the bitwise AND comparison of two integers&#x0a;specified by numeric expressions.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="BITCHANGE" func="yes">
+            <Overload retVal=""  descr="&#x0a;BITCHANGE toggles the state of a specified bit in the local bit table, and&#x0a;return the original value of the bit.">
+                <Param name="table_no"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="BITCHECK" func="yes">
+            <Overload retVal=""  descr="&#x0a;BITCHECK returns the current value of a specified bit from the local bit table.">
+                <Param name="table_no"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="BITLOAD" func="yes">
+            <Overload retVal=""  descr="&#x0a;BITLOAD assigns all values in the local bit table, or retrieves all the values.">
+                <Param name="{bit-string}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="BITNOT" func="yes">
+            <Overload retVal=""  descr="&#x0a;BITNOT returns the bitwise negation of an integer specified by any numeric&#x0a;expression.">
+                <Param name="exprn"/>
+                <Param name="bit#"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="BITOR" func="yes">
+            <Overload retVal=""  descr="&#x0a;BITOR performs the bitwise OR comparison of two integers specified by numeric&#x0a;expressions.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="BITRESET" func="yes">
+            <Overload retVal=""  descr="&#x0a;BITRESET resets the value of a specified bit in the local bit table to 0 and&#x0a;returns the value of the bit before it was changed.">
+                <Param name="table_no"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="BITSET" func="yes">
+            <Overload retVal=""  descr="&#x0a;BITSET sets the value of a specified bit in the bit table to 1 and returns the&#x0a;value of the bit before it was changed.">
+                <Param name="table_no"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="BITTEST" func="yes">
+            <Overload retVal=""  descr="&#x0a;BITTEST tests the bit number of the integer specified by an expression. The&#x0a;function returns 1 if the bit is set; it returns 0 if it is not; Bits are&#x0a;counted from right to left.">
+                <Param name="exprn"/>
+                <Param name="bit#"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="BITXOR" func="yes">
+            <Overload retVal=""  descr="&#x0a;BITXOR performs the bitwise XOR comparison of two integers specified by numeric&#x0a;expressions.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="BREAK" func="yes">
+            <Overload retVal=""  descr="&#x0a;The BREAK statement allows the break key to be configured.">
+                <Param name="BREAK | BREAK ON | BREAK OFF | BREAK exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="BYTELEN" func="yes">
+            <Overload retVal=""  descr="&#x0a;The BYTELEN function will return the length of the expression as the number of&#x0a;bytes rather than the number of characters. NOTE: This function is only&#x0a;available in jBASE 4.1 and later">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CALL" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CALL statement transfers program execution to an external subroutine.">
+                <Param name="CALL {@}subroutine.name {(argument {, argument ... })}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CALLC" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CALLC statement is used to invoke user supplied C functions compiled and&#x0a;built into standard libraries">
+                <Param name="CALLC Cfunction{(argument{,...})}"/>
+            </Overload>
+            <Overload retVal=""  descr="&#x0a;The CALLC statement is used to invoke user supplied C functions compiled and&#x0a;built into standard libraries.">
+                <Param name="CALLC @Variable{(argument {, argument ... })}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CALLdotNET" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CALLdotNET command allows BASIC to call any .NET assembly and is useful&#x0a;when using third party applications. NOTE: This command is only available in&#x0a;jBASE 4.1 and later.">
+                <Param name="CALLdotNET NameSpaceAndClassName, methodName, param SETTING ret [ON ERROR errStmt]"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CALLJ" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CALLJ statement allows a jBC program to call a Java method. CALLJ is useful&#x0a;when using third party applications offering a Java API.">
+                <Param name="CALLJ packageAndClassName, [$]methodName, param SETTING ret [ON ERROR] stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CALLONEXIT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CALLONEXIT function call allows you to specify the name of a SUBROUTINE to&#x0a;call when the program terminates.">
+                <Param name="rc = CALLONEXIT('ErrorExit')"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CASE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CASE statement allows the programmer to execute a particular sequence of&#x0a;instructions based upon the results of a series of test expressions.">
+                <Param name="BEGIN CASE CASE exprn stmt(s) CASE exprn stmt(s) ..... END CASE"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CATS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CATS function concatenates the corresponding elements in two dynamic&#x0a;arrays.">
+                <Param name="DynArr1"/>
+                <Param name="DynArr2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CHAIN" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CHAIN statement exits the current program and transfers process control to&#x0a;the program defined by the expression. Process control will never return to the&#x0a;originating program.">
+                <Param name="CHAIN exprn {(I}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CHANGE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CHANGE function operates on a variable and replaces all occurrences of one&#x0a;string with another.">
+                <Param name="var"/>
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+            <Overload retVal=""  descr="&#x0a;The CHANGE statement operates on a variable and replaces all occurrences of one&#x0a;string with another.">
+                <Param name="CHANGE exprn1 TO exprn2 IN var"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CHANGETIMESTAMP" func="yes">
+            <Overload retVal=""  descr="&#x0a;Use CHANGETIMESTAMP to adjust existing timestamp to return new timestamp value.">
+                <Param name="Timestamp"/>
+                <Param name="Array"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CHAR" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CHAR function returns the ASCII character specified by the expression.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CHARS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CHARS function accepts a dynamic array of numeric expressions and returns a&#x0a;dynamic array of the corresponding ASCII characters.">
+                <Param name="DynArr"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CHDIR" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CHDIR function allows the current working directory, as seen by the process&#x0a;environment, to be changed.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CHECKSUM" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CHECKSUM function returns a simple numeric checksum of a character string.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CLEAR" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CLEAR statement will initialize all the variables to numeric 0.">
+                <Param name="CLEAR"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CLEARCOMMON" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CLEARCOMMON statement initializes all &lt;b&gt;unnamed&lt;/b&gt; common variables to a&#x0a;value of zero.">
+                <Param name="CLEARCOMMON"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CLEARDATA" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CLEARDATA statement clears data that has been stacked by the DATA&#x0a;statement.">
+                <Param name="CLEARDATA"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CLEARFILE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CLEARFILE statement is used to clear all the data from a file previously&#x0a;opened with the OPEN statement.">
+                <Param name="CLEARFILE {var} {SETTING setvar} {ON ERROR stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CLEARINPUT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CLEARINPUT statement clears the type-ahead buffer to allow the next INPUT&#x0a;statement to force a response from the user.">
+                <Param name="CLEARINPUT"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CLEARSELECT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CLEARSELECT statement is used to clear active select lists.">
+                <Param name="CLEARSELECT {ListName | ListNumber}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CLOSE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CLOSE statement is used to CLOSE a previously opened file when it is no&#x0a;longer needed. Item locks and file locks are released.">
+                <Param name="CLOSE var{, var ...}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CLOSESEQ" func="yes">
+            <Overload retVal=""  descr="&#x0a;Close file previously opened for sequential access.">
+                <Param name="CLOSESEQ FileVar"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="COL1" func="yes">
+            <Overload retVal=""  descr="&#x0a;These functions are used in conjunction with the FIELD function to determine&#x0a;the character positions 1 position before and 1 position after the last field&#x0a;that was located.">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="COL2" func="yes">
+            <Overload retVal=""  descr="&#x0a;These functions are used in conjunction with the FIELD function to determine&#x0a;the character positions 1 position before and 1 position after the last field&#x0a;that was located.">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="COLLECTDATA" func="yes">
+            <Overload retVal=""  descr="&#x0a;The COLLECTDATA statement is used to retrieve data passed from the PASSDATA&#x0a;clause of an EXECUTE statement.">
+                <Param name="COLLECTDATA var"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="COMMON" func="yes">
+            <Overload retVal=""  descr="&#x0a;The COMMON statement declares a list of variables and matrices that can be&#x0a;shared among various programs. There can be many common areas including a&#x0a;default, unnamed common area.">
+                <Param name="COMMON {/CommonName/} var {, var ... }"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="COMPARE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The COMPARE function compares two strings and returns a value indicating&#x0a;whether or not they are equal.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+                <Param name="{justification}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CONTINUE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CONTINUE statement is the complimentary statement to the BREAK statement&#x0a;without arguments. The statement is used within a loop to skip the remaining&#x0a;code in the current iteration.">
+                <Param name="CONTINUE"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CONVERT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CONVERT statement converts one or more characters in a string to their&#x0a;corresponding replacement characters.">
+                <Param name="CONVERT exprn1 TO exprn2 IN exprn3"/>
+            </Overload>
+            <Overload retVal=""  descr="&#x0a;The CONVERT function performs exactly the same as the CONVERT statement but may&#x0a;also operate on an expression rather than being restricted to variables.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+                <Param name="exprn3"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="COS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The COS function calculates the cosine of any angle using floating point&#x0a;arithmetic, then rounds to the precision implied by the jBC program. This makes&#x0a;it very accurate.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="COUNT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The COUNT function returns the number of times that one string occurs in&#x0a;another.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="COUNTS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The COUNTS function counts the number of times a substring is repeated in each&#x0a;element of a dynamic array. NOTE: This function is only available on jBASE 4.1&#x0a;and later">
+                <Param name="dynamic array"/>
+                <Param name="substring"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CREATE" func="yes">
+            <Overload retVal=""  descr="&#x0a;Use the CREATE statement after an OPENSEQ statement to create a record in a&#x0a;jBASE directory file or to create a UNIX or DOS file.">
+                <Param name="CREATE file.var {THEN stmts [ELSE stmts] | ELSE stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="CRT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CRT statement sends data directly to the terminal, even if a PRINTER ON&#x0a;statement is currently active.">
+                <Param name="CRT | DISPLAY exprn {, exprn..} {:}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DATA" func="yes">
+            <Overload retVal=""  descr="&#x0a;The DATA statement stacks the series of expressions on an input FIFO stack.&#x0a;Terminal input statements will then treat this data as if it was typed in at&#x0a;the keyboard.">
+                <Param name="DATA exprn {, exprn ...}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DATE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The DATE( ) function returns the date in internal system form. This date is&#x0a;expressed as the number of days since December 31, 1967.">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DCOUNT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The DCOUNT() function counts the number of field elements in a string that are&#x0a;separated by a specified delimiter.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DEBUG" func="yes">
+            <Overload retVal=""  descr="&#x0a;The DEBUG statement causes the executing program to enter the jBC debugger.">
+                <Param name="DEBUG"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DECRYPT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The DECRYPT function decodes a string encrypted by the ENCRYPT function.">
+                <Param name="string"/>
+                <Param name="key"/>
+                <Param name="method"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DEFC" func="yes">
+            <Overload retVal=""  descr="&#x0a;The DEFC statement is used to declare an external C function to the jBC&#x0a;compiler and define its arguments and return types. NOTE: This refers to the&#x0a;behaviour of the DEFC statement in jBASE 4.1 and later.">
+                <Param name="DEFC {FuncType} FuncName ({ArgType {, ArgType ...}})"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DEFCE" func="yes">
+            <Overload retVal=""  descr="&#x0a;Calls an external C program, which are pure C code and do not use the jBASE&#x0a;library macro's and functions. With jBASE 4.1 the DEFCE statement should be&#x0a;used, rather than the DEFC statement.">
+                <Param name="DEFCE {FuncType} FuncName ({ArgType {, ArgType ...}})"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DEFFUN" func="yes">
+            <Overload retVal=""  descr="&#x0a;The DEFFUN statement is used to declare an external jBC function to the jBC&#x0a;compiler and optionally define its arguments. DEFFUN is used in the program&#x0a;that calls the function.">
+                <Param name="DEFFUN FuncName ({ {MAT} Argument1, {MAT} Argument2...})"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DEL" func="yes">
+            <Overload retVal=""  descr="&#x0a;The DEL statement is used to remove a specified element of a dynamic array.">
+                <Param name="DEL var&lt;exprn1{, exprn2{, exprn3}}&gt;"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DELETE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The DELETE statement is used to delete a record from a jBASE file.">
+                <Param name="DELETE {var,} exprn {SETTING setvar} {ON ERROR stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DELETELIST" func="yes">
+            <Overload retVal=""  descr="&#x0a;The DELETELIST statement will delete the previously stored list named by&#x0a;expression.">
+                <Param name="DELETELIST exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DELETESEQ" func="yes">
+            <Overload retVal=""  descr="&#x0a;DELETESEQ deletes an operating system file.">
+                <Param name="DELETESEQ exprn{,fname} {SETTING setvar} {ON ERROR stmts} {LOCKED stmts} THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DELETEU" func="yes">
+            <Overload retVal=""  descr="&#x0a;Use the DELETEU statement to delete a record from a jBASE file without&#x0a;releasing the update record lock set by a previous READU statement.">
+                <Param name="DELETEU {var,} exprn {SETTING setvar} {ON ERROR stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DIMENSION" func="yes">
+            <Overload retVal=""  descr="&#x0a;The DIM statement is used to declare arrays to the compiler before they are&#x0a;referenced.">
+                <Param name="DIM{ENSION} var(number{, number... }){, var(number {,number...}) ...}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DIR" func="yes">
+            <Overload retVal=""  descr="&#x0a;The DIR function returns information about a file. The filename is a string&#x0a;argument representing the path and filename of a file. This function returns a&#x0a;dynamic array with four attributes.">
+                <Param name="filename"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DISPLAY" func="yes">
+            <Overload retVal=""  descr="&#x0a;The CRT statement sends data directly to the terminal, even if a PRINTER ON&#x0a;statement is currently active.">
+                <Param name="CRT | DISPLAY exprn {, exprn..} {:}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DIV" func="yes">
+            <Overload retVal=""  descr="&#x0a;The DIV function calculates the value of the quotient after division of the&#x0a;dividend by the divisor. The dividend and divisor expressions can evaluate to&#x0a;any numeric value.">
+                <Param name="dividend"/>
+                <Param name="divisor"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DIVS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The DIVS function returns a dynamic array, the content of which is derived by&#x0a;dividing each element of the first dynamic array argument by the corresponding&#x0a;element of the second dynamic array argument.">
+                <Param name="DynArr1"/>
+                <Param name="DynArr2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DOWNCASE" func="yes">
+            <Overload retVal=""  descr="&#x0a;DOWNCASE converts all uppercase characters in an expression to lowercase&#x0a;characters.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DQUOTE" func="yes">
+            <Overload retVal=""  descr="&#x0a;These function will put a double quotation mark and the beginning and end of a&#x0a;string.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DROUND" func="yes">
+            <Overload retVal=""  descr="&#x0a;The DROUND function performs double-precision rounding on a value.">
+                <Param name="exprn1"/>
+                <Param name="{exprn2}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DTX" func="yes">
+            <Overload retVal=""  descr="&#x0a;The DTX function will return the hexadecimal representation of a numeric&#x0a;expression.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="DYNTOXML" func="yes">
+            <Overload retVal=""  descr="&#x0a;The DYNTOXML function converts a dynamic array to XMLSee also XMLTODYN and&#x0a;XMLTOXML. NOTE: This function is only available in jBASE 4.1 and later">
+                <Param name="array"/>
+                <Param name="xsl"/>
+                <Param name="result"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="EBCDIC" func="yes">
+            <Overload retVal=""  descr="&#x0a;The EBCDIC function converts all the characters in an expression from the ASCII&#x0a;character set to the EBCDIC character set.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ECHO" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ECHO statement will turn on or off the echoing of characters typed at the&#x0a;keyboard.">
+                <Param name="ECHO ON ECHO OFF ECHO exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ENCRYPT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ENCRYPT function encrypts strings.">
+                <Param name="string"/>
+                <Param name="key"/>
+                <Param name="method"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="END" func="yes">
+            <Overload retVal=""  descr="&#x0a;The END statement is used to terminate a program or to conclude a set of jBC&#x0a;statements bounded by a condition.">
+                <Param name="END"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ENTER" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ENTER statement unconditionally passes control to another executable&#x0a;program.">
+                <Param name="ENTER program_name ENTER @var_name"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="EQS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The EQS function tests if elements of one dynamic array are equal to the&#x0a;elements of another dynamic array.">
+                <Param name="array1"/>
+                <Param name="array2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="EQUATE" func="yes">
+            <Overload retVal=""  descr="&#x0a;EQUATE is used to declare a symbol equivalent to a literal, variable or simple&#x0a;expression.">
+                <Param name="EQU{ATE} symbol TO exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="EREPLACE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The EREPLACE function replaces a substring in an expression with another&#x0a;substring.">
+                <Param name="exprn"/>
+                <Param name="substring"/>
+                <Param name="replacement"/>
+                <Param name="[occurrence]"/>
+                <Param name="[begin]"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="EXECUTE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The EXECUTE or PERFORM statement allows the currently executing program to&#x0a;pause and execute any other UNIX/NT program, including another jBC program or a&#x0a;jBASE command.">
+                <Param name="EXECUTE exprn {CAPTURING var} {RETURNING|SETTING var} {PASSLIST exprn} {RTNLIST {var}} {PASSDATA var} {RTNDATA var}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="EXIT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The EXIT statement is used to halt the execution of a program and return a&#x0a;numeric exit code to the parent process.">
+                <Param name="EXIT (exprn) | EXIT"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="EXP" func="yes">
+            <Overload retVal=""  descr="&#x0a;The EXP function returns the mathematical constant e to the specified power.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="EXTRACT" func="yes">
+            <Overload retVal=""  descr="&#x0a;he EXTRACT function is an alternative method of accessing values in a dynamic&#x0a;array other than using the &lt;n,n,n&gt; syntax described earlier.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+                <Param name="{exprn3}"/>
+                <Param name="{exprn4}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="FADD" func="yes">
+            <Overload retVal=""  descr="&#x0a;The FADD function performs floating point addition of two numeric values.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="FDIV" func="yes">
+            <Overload retVal=""  descr="&#x0a;The FDIV function performs floating point division on two numeric values.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="FIELD" func="yes">
+            <Overload retVal=""  descr="&#x0a;The FIELD function will return a multi-character delimited field from within a&#x0a;string.">
+                <Param name="string"/>
+                <Param name="delimiter"/>
+                <Param name="occurrence"/>
+                <Param name="{extractCount}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="FIELDS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The FIELDS function is an extension of the FIELD function. It returns a dynamic&#x0a;array of multi-character delimited fields from a dynamic array of strings.">
+                <Param name="DynArr"/>
+                <Param name="delimiter"/>
+                <Param name="occurrence"/>
+                <Param name="{extractCount}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="FILEINFO" func="yes">
+            <Overload retVal=""  descr="&#x0a;The FILEINFO function returns info about a specified file variable. This&#x0a;function is currently limited to return values to determine if the file&#x0a;variable is a valid file descriptor variable.">
+                <Param name="file.var"/>
+                <Param name="key"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="FILELOCK" func="yes">
+            <Overload retVal=""  descr="&#x0a;When the FILELOCK statement is executed, it will attempt to take an exclusive&#x0a;lock on the entire file.">
+                <Param name="FILELOCK filevar {LOCKED stmts} {ON ERROR stmts}"/>
+            </Overload>
+            <Overload retVal=""  descr="&#x0a;The lock continues until either the file is closed, the program terminates or a&#x0a;FILEUNLOCK statement is executed.">
+                <Param name="FILEUNLOCK filevar {ON ERROR stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="FIND" func="yes">
+            <Overload retVal=""  descr="&#x0a;The FIND statement allows the location of a specified string within a dynamic&#x0a;array.">
+                <Param name="FIND exprn1 IN Var1 {, exprn2} SETTING Var2 {, Var3 {, Var4}} THEN|ELSE stmt(s)"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="FINDSTR" func="yes">
+            <Overload retVal=""  descr="&#x0a;The FINDSTR statement is used to locate a string as a substring of a dynamic&#x0a;array element. It is similar in operation to the FIND statement.">
+                <Param name="FINDSTR exprn1 IN var1 {,exprn2} SETTING var2 {,var3{,var4}} THEN|ELSE stmt(s)"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="FMT" func="yes">
+            <Overload retVal=""  descr="&#x0a;Performs formatting of output data values for use with PRINT and CRT commands.&#x0a;Also see: Output Formatting">
+                <Param name="Variable"/>
+                <Param name="MaskExpression"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="FMTS" func="yes">
+            <Overload retVal=""  descr="&#x0a;Performs formatting of the elements of a dynamic array for output. Each element&#x0a;of the array is independently acted upon and returned as an element in a new&#x0a;dynamic array.">
+                <Param name="dynamic.array"/>
+                <Param name="format"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="FMUL" func="yes">
+            <Overload retVal=""  descr="&#x0a;The FMUL function performs floating point multiplication of two numeric values.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="FOLD" func="yes">
+            <Overload retVal=""  descr="&#x0a;The FOLD function re-delimits a string by replacing spaces with attribute marks&#x0a;at positions defined by a length parameter.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="FOOTING" func="yes">
+            <Overload retVal=""  descr="&#x0a;The FOOTING statement causes all subsequent output to the terminal to be halted&#x0a;at the end of each output page.">
+                <Param name="FOOTING exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="FOR" func="yes">
+            <Overload retVal=""  descr="&#x0a;The FOR statement allows the programming of looping constructs within the&#x0a;program. The loop is controlled by a counting variable and may be terminated&#x0a;early by expressions tested after every iteration.">
+                <Param name="FOR var=exprn1 TO exprn2 {STEP exprn3} {WHILE | UNTIL exprn4}...NEXT {var}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="FORMLIST" func="yes">
+            <Overload retVal=""  descr="&#x0a;The FORMLIST statement creates an active select list from a dynamic array.">
+                <Param name="FORMLIST var1 {TO var2 | listnum}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="FSUB" func="yes">
+            <Overload retVal=""  descr="&#x0a;The FSUB function performs floating point subtraction on two numeric values.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="FUNCTION" func="yes">
+            <Overload retVal=""  descr="&#x0a;Identifies a user-defined function which can be invoked by other jBC programs.&#x0a;Arguments to the function can optionally be declared.">
+                <Param name="FUNCTION name {({MAT} var, {MAT} var...) }"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="GES" func="yes">
+            <Overload retVal=""  descr="&#x0a;The GES function does a comparison of corresponding elements in two dynamic&#x0a;arrays.">
+                <Param name="DynArr1"/>
+                <Param name="DynArr2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="GET" func="yes">
+            <Overload retVal=""  descr="&#x0a;The GET statement reads a block of data directly from a device.">
+                <Param name="GET Var {,len} {SETTING count} FROM dev {UNTIL TermChars} {RETURNING TermChar} {WAITING Timeout} THEN|ELSE stmts "/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="GETCWD" func="yes">
+            <Overload retVal=""  descr="&#x0a;The GETCWD function allows a jBC program to determine the current working&#x0a;directory of the program.">
+                <Param name="Var"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="GETENV" func="yes">
+            <Overload retVal=""  descr="&#x0a;The GETENV function allows a jBC program to determine the value of any of the&#x0a;environment variables associated with it.">
+                <Param name="exprn"/>
+                <Param name="var"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="GETLIST" func="yes">
+            <Overload retVal=""  descr="&#x0a;GETLIST allows the program to retrieve a previously stored list (perhaps&#x0a;created with the SAVE-LIST command), into a jBC variable.">
+                <Param name="GETLIST exprn TO var1 {SETTING var2} THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="GOSUB" func="yes">
+            <Overload retVal=""  descr="&#x0a;The GOSUB statement causes execution of a local subroutine, after which&#x0a;execution will continue with the next line of code.">
+                <Param name="GOSUB label[:]"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="GOTO" func="yes">
+            <Overload retVal=""  descr="&#x0a;The GOTO statement causes program execution to jump to the code at a specified&#x0a;label.">
+                <Param name="GOTO label[:] GO TO label[:] GO label[:]"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="GROUP" func="yes">
+            <Overload retVal=""  descr="&#x0a;The GROUP function is equivalent to the FIELD function.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+                <Param name="exprn3"/>
+                <Param name="exprn4"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="GROUPSTORE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The GROUPSTORE statement substitutes one group of characters with another group&#x0a;of characters.">
+                <Param name="GROUPSTORE from.var IN to.var USING start, replace {, delim}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="HEADING" func="yes">
+            <Overload retVal=""  descr="&#x0a;The statement allows an expression to be evaluated and displayed at the top of&#x0a;each page.">
+                <Param name="HEADING {ON channel} exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="HEADINGE" func="yes">
+            <Overload retVal=""  descr="&#x0a;Defines a heading to be included at the top of an output page and ejects the&#x0a;page.">
+                <Param name="HEADINGE {ON channel} exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="HEADINGR" func="yes">
+            <Overload retVal=""  descr="&#x0a;Defines a heading to be included at the top of an output page and suppresses&#x0a;the page eject.">
+                <Param name="HEADINGR {ON channel} exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="HUSH" func="yes">
+            <Overload retVal=""  descr="&#x0a;The jBASE HUSH command resets the jBASE echo enabled flag. This suppresses&#x0a;input character echo, when using a jBASE program.">
+                <Param name="HUSH { ON | OFF }"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ICONV" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ICONV function converts data in external form such as dates to their&#x0a;internal form.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ICONVS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ICONVS function converts each element of a dynamic array to a specified&#x0a;internal storage format.">
+                <Param name="dynamic array"/>
+                <Param name="conversion"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="IF" func="yes">
+            <Overload retVal=""  descr="&#x0a;The IF statement is used to allow other statements to be conditionally&#x0a;executed.">
+                <Param name="IF exprn THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="IFS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The IFS function returns a dynamic array whose elements are chosen individually&#x0a;from one of two dynamic arrays based on the contents of a third dynamic array.">
+                <Param name="dynamic.array"/>
+                <Param name="true.array"/>
+                <Param name="false.array"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="IN" func="yes">
+            <Overload retVal=""  descr="&#x0a;The IN statement allows the program to receive raw data from the input device,&#x0a;which is normally the terminal keyboard, one character at a time.">
+                <Param name="IN Var {FOR exprn THEN|ELSE stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="INDEX" func="yes">
+            <Overload retVal=""  descr="&#x0a;The INDEX function will return the position of a character or characters within&#x0a;another string.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+                <Param name="exprn3"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="INDICES" func="yes">
+            <Overload retVal=""  descr="&#x0a;This function has a dual purpose. In its first invocation will return a dynamic&#x0a;array of all the index names associated with a file. In its second invocation&#x0a;will return a dynamic array containing information about the specified file and&#x0a;index.">
+                <Param name="filevar"/>
+                <Param name="{index-name}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="INMAT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The INMAT() function returns the number of dimensioned array elements.">
+                <Param name="{array}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="INPUT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The INPUT statement allows the program to collect data from the current input&#x0a;device, which will normally be the terminal keyboard but may be stacked input&#x0a;from the same or separate program.">
+                <Param name="INPUT {@(exprn1{,exprn2)}{:} var{{,exprn3},exprn4} {:}{_} {WITH exprn5} {FOR exprn6 THEN|ELSE stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="INPUTCLEAR" func="yes">
+            <Overload retVal=""  descr="&#x0a;The INPUTCLEAR statement clears the type-ahead buffer.">
+                <Param name="INPUTCLEAR"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="INPUTNULL" func="yes">
+            <Overload retVal=""  descr="&#x0a;The INPUTNULL statement allows the definition of a character that will allow a&#x0a;null input to be seen by the INPUT @ statement.">
+                <Param name="INPUTNULL exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="INS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The INS statement allows the insertion of elements into a dynamic array.">
+                <Param name="INS exprn BEFORE Var&lt;exprn1{, exprn2{, exprn3}}&gt;"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="INSERT" func="yes">
+            <Overload retVal=""  descr="&#x0a;INSERT is the function form of the INS statement, which should be used in&#x0a;preference to this function.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+                <Param name="{exprn3}"/>
+                <Param name="{exprn4}"/>
+                <Param name="exprn5"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="INT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The INT function truncates a numeric value into its nearest integer form.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="IOCTL" func="yes">
+            <Overload retVal=""  descr="&#x0a;Behaves in a similar manner to the C function ioctl(). It's purpose is to allow&#x0a;commands to be sent to the database driver for a particular file, and then to&#x0a;receive a reply from the database driver.">
+                <Param name="Filevar"/>
+                <Param name="Command"/>
+                <Param name="Parameter"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ISALNUM" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ISALNUM function checks that an expression consists entirely of&#x0a;alphanumeric characters. NOTE: This function is only available in jBASE 4.1 and&#x0a;later.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ISALPHA" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ISALPHA function checks that an expression consists entirely of alphabetic&#x0a;characters. NOTE: This function is only available in jBASE 4.1 and later.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ISCNTRL" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ISCNTRL function checks that an expression consists entirely of control&#x0a;characters. NOTE: This function is only available in jBASE 4.1 and later.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ISDIGIT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ISDIGIT function checks that an expression consists entirely of numeric&#x0a;characters. NOTE: This function is only available in jBASE 4.1 and later.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ISPRINT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ISPRINT function checks that an expression consists entirely of printable&#x0a;characters. NOTE: This function is only available in jBASE 4.1 and later.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ISSPACE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ISSPACE function checks that an expression consists entirely of space type&#x0a;characters. NOTE: This function is only available in jBASE 4.1 and later.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ISUPPER" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ISUPPER function checks that an expression consists entirely of upper case&#x0a;characters. NOTE: This function is only available in jBASE 4.1 and later.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="JBASECOREDUMP" func="yes">
+            <Overload retVal=""  descr="&#x0a;The JBASECOREDUMP function is a diagnostic tool for applications that allows a&#x0a;portion of the application to be dumped to an external file for later analysis.&#x0a;NOTE: This function is only available in jBASE 4.1 and later.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="JBASETHREADCreate" func="yes">
+            <Overload retVal=""  descr="&#x0a;The JBASETHREADCreate function starts a new thread from the current process.">
+                <Param name="ProgramName"/>
+                <Param name="Arguments"/>
+                <Param name="Reserved"/>
+                <Param name="Handle"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="JBASETHREADStatus" func="yes">
+            <Overload retVal=""  descr="&#x0a;The JBASETHREADStatus command shows the status of all running threads. NOTE:&#x0a;This function is only available in jBASE 4.1 and later.">
+                <Param name="ThreadList"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="JQLCOMPILE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The JQLCOMPILE function compiles a jQL statement. NOTE: This function is only&#x0a;available in jBASE 4.1 and later.">
+                <Param name="Statement"/>
+                <Param name="Command"/>
+                <Param name="Options"/>
+                <Param name="Messages"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="JQLEXECUTE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The JQLEXECUTE statement executes a compiled jQL statement. NOTE: This function&#x0a;is only available in jBASE 4.1 and later.">
+                <Param name="Statement"/>
+                <Param name="SelectVar"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="JQLFETCH" func="yes">
+            <Overload retVal=""  descr="&#x0a;The JQLFETCH statement fetches the next result in a compiled jQL statement.&#x0a;NOTE: This function is only available in jBASE 4.1 and later.">
+                <Param name="Statement"/>
+                <Param name="ControlVar"/>
+                <Param name="DataVar"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="JQLGETPROPERTY" func="yes">
+            <Overload retVal=""  descr="&#x0a;The JQLGETPROPERTY statement gets the property of a compiled jQL statement.&#x0a;NOTE: This function is only available in jBASE 4.1 and later.">
+                <Param name="PropertyValue"/>
+                <Param name="Statement"/>
+                <Param name="Column"/>
+                <Param name="PropertyName"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="JQLPUTPROPERTY" func="yes">
+            <Overload retVal=""  descr="&#x0a;The JQLPUTPROPERTY statement sets a property in a compiled jQL statement. NOTE:&#x0a;This function is only available in jBASE 4.1 and later.">
+                <Param name="PropertyValue"/>
+                <Param name="Statement"/>
+                <Param name="Column"/>
+                <Param name="PropertyName"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="KEYIN" func="yes">
+            <Overload retVal=""  descr="&#x0a;The KEYIN function reads a single character from the input buffer and returns&#x0a;it.">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="LATIN1" func="yes">
+            <Overload retVal=""  descr="&#x0a;The LATIN1 function converts a UTF-8 byte sequence into the binary or latin1&#x0a;equivalent. NOTE: This function is only available in jBASE 4.1 or later">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="LEFT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The LEFT function extracts a sub-string of a specified length from the&#x0a;beginning of a string.">
+                <Param name="exprn"/>
+                <Param name="length"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="LEN" func="yes">
+            <Overload retVal=""  descr="&#x0a;The LEN function returns the character length of the supplied expression.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="LENDP" func="yes">
+            <Overload retVal=""  descr="&#x0a;The LENDP function returns the display length of an expression.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="LENS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The LENS function returns a dynamic array of the number of bytes in each&#x0a;element of a dynamic array.">
+                <Param name="dynamic.array"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="LES" func="yes">
+            <Overload retVal=""  descr="&#x0a;The LES function determines whether elements in one dynamic array are less than&#x0a;or equal to the corresponding elements in another dynamic array.">
+                <Param name="array1"/>
+                <Param name="array2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="LN" func="yes">
+            <Overload retVal=""  descr="&#x0a;The LN function returns the value of the natural logarithm of the supplied&#x0a;value.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="LOCALDATE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The LOCALDATE function returns an internal date using the specified Timestamp&#x0a;and TimeZone combination. NOTE: This function is only available in jBASE 4.1&#x0a;and later.">
+                <Param name="Timestamp"/>
+                <Param name="TimeZone"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="LOCALTIME" func="yes">
+            <Overload retVal=""  descr="&#x0a;The LOCALTIME function returns an internal time using the specified Timestamp&#x0a;and TimeZone combination. NOTE: This function is only available in jBASE 4.1&#x0a;and later.">
+                <Param name="Timestamp"/>
+                <Param name="TimeZone"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="LOCATE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The LOCATE statement finds the position of an element within a specified&#x0a;dimension of a dynamic array.">
+                <Param name="LOCATE exprn1 IN exprn2{&lt;exprn3{,exprn4}&gt;}, {,exprn5} {BY exprn6} SETTING Var THEN|ELSE stmt(s)"/>
+            </Overload>
+            <Overload retVal=""  descr="&#x0a;The LOCATE statement finds the position of an element within a specified&#x0a;dimension of a dynamic array.">
+                <Param name="LOCATE(exprn1, exprn2{,exprn3{,exprn4}}; Var; exprn6) THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="LOCK" func="yes">
+            <Overload retVal=""  descr="&#x0a;The LOCK statement will attempt to set an execution lock thus preventing any&#x0a;other jBC program that respects that lock to wait until this program has&#x0a;released it.">
+                <Param name="LOCK exprn {THEN|ELSE stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="LOOP" func="yes">
+            <Overload retVal=""  descr="&#x0a;The LOOP construct allows the programmer to specify loops with multiple exit&#x0a;conditions.">
+                <Param name="LOOP stmts1 WHILE|UNTIL exprn DO stmts2 REPEAT"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="LOWCASE" func="yes">
+            <Overload retVal=""  descr="&#x0a;LOWCASE converts all uppercase characters in an expression to lowercase&#x0a;characters.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="LOWER" func="yes">
+            <Overload retVal=""  descr="&#x0a;The LOWER function lowers system delimiters in a string to the next lowest&#x0a;delimiter.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MAKETIMESTAMP" func="yes">
+            <Overload retVal=""  descr="&#x0a;The MAKETIMESTAMP function generates a timestamp using a combination of&#x0a;internal date, time and timezone.">
+                <Param name="InternalDate"/>
+                <Param name="InternalTime"/>
+                <Param name="Timezone"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MAT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The MAT command is used to either assign every element in a specified array to&#x0a;a single value or to assign the entire contents of one array to another.">
+                <Param name="MAT Array = exprn | MAT Array1 = MAT Array2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MATBUILD" func="yes">
+            <Overload retVal=""  descr="&#x0a;The MATBUILD statement is used to create a dynamic array out of a dimensioned&#x0a;array.">
+                <Param name="MATBUILD var FROM array{, exprn1{, exprn2}} {USING exprn3}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MATCHES" func="yes">
+            <Overload retVal=""  descr="&#x0a;The MATCH or MATCHES function allows pattern matching to be applied to an&#x0a;expression.">
+                <Param name="exprn1 MATCHES exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MATCHFIELD" func="yes">
+            <Overload retVal=""  descr="&#x0a;The MATCHFIELD function checks a string against a match pattern. See also&#x0a;MATCHES for information about pattern matching.">
+                <Param name="string"/>
+                <Param name="pattern"/>
+                <Param name="field"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MATPARSE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The MATPARSE statement is used to assign the elements of a matrix from the&#x0a;elements of a dynamic array.">
+                <Param name="MATPARSE array{, exprn1{, exprn2}} FROM var1 {USING exprn3} SETTING var2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MATREAD" func="yes">
+            <Overload retVal=""  descr="&#x0a;The MATREAD statement allows a record stored in a jBASE file to be read and&#x0a;mapped directly into a dimensioned array.">
+                <Param name="MATREAD array FROM {var1,} exprn {SETTING setvar} {ON ERROR stmts} {LOCKED stmts} {THEN|ELSE stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MATREADU" func="yes">
+            <Overload retVal=""  descr="&#x0a;The MATREADU statement allows a record stored in a jBASE file to be read and&#x0a;mapped directly into a dimensioned array. The record will also be locked for&#x0a;update by the program.">
+                <Param name="MATREADU array FROM {var1,} exprn {SETTING setvar} {ON ERROR stmts} {LOCKED stmts} {THEN|ELSE stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MATWRITE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The MATWRITE statement transfers the entire contents of a dimensioned array to&#x0a;a specified record on disc.">
+                <Param name="MATWRITE array ON {var,} exprn {SETTING setvar} {ON ERROR stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MATWRITEU" func="yes">
+            <Overload retVal=""  descr="&#x0a;The MATWRITEU statement transfers the entire contents of a dimensioned array to&#x0a;a specified record on file, in the same manner as the MATWRITE statement. An&#x0a;existing record lock will be preserved.">
+                <Param name="MATWRITEU array ON {var,} exprn {SETTING setvar} {ON ERROR stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MAXIMUM" func="yes">
+            <Overload retVal=""  descr="&#x0a;The MAXIMUM function is used to return the element of a dynamic array with the&#x0a;highest numerical value.">
+                <Param name="DynArr"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MINIMUM" func="yes">
+            <Overload retVal=""  descr="&#x0a;The MINIMUM function is used to return the element of a dynamic array with the&#x0a;lowest numerical value.">
+                <Param name="DynArr"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MOD" func="yes">
+            <Overload retVal=""  descr="&#x0a;The MOD and REM functions return the arithmetic modulo (remainder) of two&#x0a;numeric expressions.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MODS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The MODS function creates a dynamic array of the remainder after the integer&#x0a;division of the corresponding elements of two dynamic arrays.">
+                <Param name="array1"/>
+                <Param name="array2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MSLEEP" func="yes">
+            <Overload retVal=""  descr="&#x0a;Allows the program to pause execution for a specified number of milliseconds.">
+                <Param name="MSLEEP {milliseconds}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="MULS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The MULS function returns a dynamic array, the content of which is derived by&#x0a;multiplying the corresponding elements of two dynamic arrays passed as&#x0a;arguments.">
+                <Param name="DynArr1"/>
+                <Param name="DynArr2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="NEG" func="yes">
+            <Overload retVal=""  descr="&#x0a;The NEG function is used to invert the arithmetic value of an expression.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="NEGS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The NEGS function is used to return the negative values of all the elements in&#x0a;a dynamic array.">
+                <Param name="dynarray"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="NES" func="yes">
+            <Overload retVal=""  descr="&#x0a;The NES function determines whether elements of one dynamic array are equal to&#x0a;the elements of another dynamic array.">
+                <Param name="dynarray1"/>
+                <Param name="dynarray2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="NOBUF" func="yes">
+            <Overload retVal=""  descr="&#x0a;The NOBUF statement turns off buffering for a file previously opened for&#x0a;sequential processing.">
+                <Param name="NOBUF file.var {THEN stmts [ELSE stmts] | ELSE stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="NOT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The NOT function is used to invert the Boolean value of an expression. It&#x0a;useful for explicitly testing for a false condition.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="NOTS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The NOTS function is used to return a dynamic array of the logical complements&#x0a;of each element of a dynamic array.">
+                <Param name="dynarray"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="NULL" func="yes">
+            <Overload retVal=""  descr="&#x0a;The NULL statement performs no function but can be useful in clarifying syntax&#x0a;and where the language requires a statement but the programmer does not wish to&#x0a;perform any actions.">
+                <Param name="NULL"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="NUM" func="yes">
+            <Overload retVal=""  descr="&#x0a;The NUM function is used to test arguments for numeric values.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="NUMS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The NUMS function is used to determine whether the elements of a dynamic array&#x0a;are numeric.">
+                <Param name="dynarray"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="OBJEXCALLBACK" func="yes">
+            <Overload retVal=""  descr="&#x0a;jBASE OBjEX provides the facility to call a subroutine from a front end program&#x0a;written in a tool that supports OLE, such as Delphi or Visual Basic.">
+                <Param name="OBJEXCALLBACK exprn1, exprn2 THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="OCONV" func="yes">
+            <Overload retVal=""  descr="&#x0a;The OCONV statement is used to convert internal representations of data to&#x0a;their external form.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="OCONVS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The OCONVS function is used to convert the elements of a dynamic array to a&#x0a;specified format for external output.">
+                <Param name="dynamic.array"/>
+                <Param name="conversion"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ONGOSUB" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ON ... GOSUB statement is used to transfer program execution to a label&#x0a;based upon a calculation.">
+                <Param name="ON exprn GOSUB label{, label...}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ONGOTO" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ON ... GOTO statement is used to transfer program execution to a label&#x0a;based upon a calculation.">
+                <Param name="ON exprn GOTO label{, label...}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="OPEN" func="yes">
+            <Overload retVal=""  descr="&#x0a;The OPEN statement is used to open a file or device to a descriptor variable&#x0a;within jBC.">
+                <Param name="OPEN {exprn1,}exprn2 TO {var} {SETTING setvar} THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="OPENDEV" func="yes">
+            <Overload retVal=""  descr="&#x0a;Opens a device (or file) for sequential writing and/or reading.">
+                <Param name="OPENDEV Device TO FileVar {LOCKED stmts} THEN | ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="OPENINDEX" func="yes">
+            <Overload retVal=""  descr="&#x0a;The OPENINDEX statement is used to open a particular index definition for a&#x0a;particular file. This index file variable can later be used with the SELECT&#x0a;statement.">
+                <Param name="OPENINDEX filename,indexname TO indexvar {SETTING setvar} THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="OPENPATH" func="yes">
+            <Overload retVal=""  descr="&#x0a;The OPENPATH statement is used to open a file (given an absolute or relative&#x0a;path) to a descriptor variable within jBC. See also the OPEN statement.">
+                <Param name="OPENPATH exprn1 TO {var} {SETTING setvar} THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="OPENSEQ" func="yes">
+            <Overload retVal=""  descr="&#x0a;Opens a file for sequential writing and/or reading.">
+                <Param name="OPENSEQ Path{,File} {READONLY} TO FileVar {SETTING setvar} {ON ERROR stmts} {LOCKED stmts} THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="OPENSER" func="yes">
+            <Overload retVal=""  descr="&#x0a;Serial IO can be handled via the OPENSEQ statement however the OPENSER&#x0a;statement has also been provided.">
+                <Param name="OPENSER Path,DevInfo | PIPE TO FileVar THEN | ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="ORS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The ORS function creates a dynamic array of the logical OR of the corresponding&#x0a;elements of two dynamic arrays.">
+                <Param name="dynarray1"/>
+                <Param name="dynarray2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="OSBREAD" func="yes">
+            <Overload retVal=""  descr="&#x0a;Reads an OS file from a file opened.">
+                <Param name="OSBREAD var FROM FileVar AT ByteExpr LENGTH LengthExpr {ON ERROR stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="OSBWRITE" func="yes">
+            <Overload retVal=""  descr="&#x0a;Writes an OS file to an file opened.">
+                <Param name="OSBWRITE var ON | TO FileVar AT ByteExpr {ON ERROR stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="OSCLOSE" func="yes">
+            <Overload retVal=""  descr="&#x0a;Closes a previously opened OS file.">
+                <Param name="OSCLOSE FileVar {ON ERROR stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="OSDELETE" func="yes">
+            <Overload retVal=""  descr="&#x0a;Deletes an OS file.">
+                <Param name="OSDELETE exprn {ON ERROR stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="OSOPEN" func="yes">
+            <Overload retVal=""  descr="&#x0a;Opens an OS file for processing.">
+                <Param name="OSOPEN exprn {READONLY} {TO FileVar} {ON ERROR stmts} {THEN|ELSE} stmts {END}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="OSREAD" func="yes">
+            <Overload retVal=""  descr="&#x0a;Reads an OS file.">
+                <Param name="OSREAD var FROM exprn {ON ERROR stmts} {THEN|ELSE} stmts {END}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="OSWRITE" func="yes">
+            <Overload retVal=""  descr="&#x0a;Writes an OS file.">
+                <Param name="OSWRITE var ON | TO exprn {ON ERROR stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="OUT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The OUT statement is used to send raw characters to the current output device&#x0a;(normally the terminal).">
+                <Param name="OUT exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="PAGE" func="yes">
+            <Overload retVal=""  descr="&#x0a;Prints any FOOTING statement, throws a page and prints any heading statement on&#x0a;the current output device.">
+                <Param name="PAGE {ON channel} {exprn}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="PAUSE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The PAUSE statement allows processing to be suspended until an external event&#x0a;triggered by a WAKE statement from another process or a timeout occurs.">
+                <Param name="PAUSE {exprn}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="PERFORM" func="yes">
+            <Overload retVal=""  descr="&#x0a;The EXECUTE or PERFORM statement allows the currently executing program to&#x0a;pause and execute any other UNIX/NT program, including another jBC program or a&#x0a;jBASE command.">
+                <Param name="PERFORM exprn {CAPTURING var} {RETURNING|SETTING var} {PASSLIST exprn} {RTNLIST {var}} {PASSDATA var} {RTNDATA var}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="PRECISION" func="yes">
+            <Overload retVal=""  descr="&#x0a;The PRECISION statement informs jBASE as to the number of digits of precision&#x0a;it uses after the decimal point in numbers.">
+                <Param name="PRECISION integer"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="PRINT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The PRINT statement sends data directly to the current output device, which&#x0a;will either be the terminal or the printer.">
+                <Param name="PRINT {ON Channel} exprn {, exprn...} {:}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="PRINTER" func="yes">
+            <Overload retVal=""  descr="&#x0a;The PRINTER statement is used to control the destination of output from the&#x0a;PRINT statement.">
+                <Param name="PRINTER ON | PRINTER OFF | PRINTER CLOSE {ON channel_number}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="PRINTERR" func="yes">
+            <Overload retVal=""  descr="&#x0a;Used to print standard jBASE error messages.">
+                <Param name="PRINTERR exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="PROCREAD" func="yes">
+            <Overload retVal=""  descr="&#x0a;Used to retrieve data passed to programs from a jCL program.">
+                <Param name="PROCREAD var THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="PROCWRITE" func="yes">
+            <Overload retVal=""  descr="&#x0a;Used to pass data back to the primary input buffer of a calling jCL program.">
+                <Param name="PROCWRITE exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="PROGRAM" func="yes">
+            <Overload retVal=""  descr="&#x0a;Performs no function other than to document the source code.">
+                <Param name="PROGRAM progname"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="PROMPT" func="yes">
+            <Overload retVal=""  descr="&#x0a;Used to change the prompt character used by terminal input commands">
+                <Param name="PROMPT exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="PUTENV" func="yes">
+            <Overload retVal=""  descr="&#x0a;Used to set environment variables for the current process.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="PWR" func="yes">
+            <Overload retVal=""  descr="&#x0a;The PWR function raises a number to the n'th power.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+            <Overload retVal=""  descr="&#x0a;The PWR function raises a number to the n'th power.">
+                <Param name="exprn1 ^ exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="QUOTE" func="yes">
+            <Overload retVal=""  descr="&#x0a;These function will put a double quotation mark and the beginning and end of a&#x0a;string.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="RAISE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The RAISE function raises system delimiters in a string to the next highest&#x0a;delimiter.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="READ" func="yes">
+            <Overload retVal=""  descr="&#x0a;The READ statement allows a program to read a record from a previously opened&#x0a;file into a variable.">
+                <Param name="READ var1 FROM { var2,} exprn {SETTING setvar} {ON ERROR stmts} THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="READBLK" func="yes">
+            <Overload retVal=""  descr="&#x0a;The READBLK statement reads a block of data of a specified length from a file&#x0a;opened for sequential processing, and assigns it to a variable.">
+                <Param name="READBLK var FROM file.var, blocksize {THEN stmte [ELSE stmts]|ELSE stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="READL" func="yes">
+            <Overload retVal=""  descr="&#x0a;The READL statement allows a process to read a record from a previously opened&#x0a;file into a variable and takes a read-only shared lock on the record.">
+                <Param name="READL var1 FROM {var2,} exprn {SETTING setvar} {ON ERROR stmts} {LOCKED stmts} THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="READLIST" func="yes">
+            <Overload retVal=""  descr="&#x0a;READLIST allows the program to retrieve a previously stored list (perhaps&#x0a;created with the SAVE-LIST command), into a jBC variable.">
+                <Param name="READLIST var1 FROM exprn {SETTING var2} THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="READNEXT" func="yes">
+            <Overload retVal=""  descr="&#x0a;READNEXT retrieves the next element in a list variable.">
+                <Param name="READNEXT var1, var2 {FROM var3} {SETTING setvar} {THEN|ELSE stmts}"/>
+            </Overload>
+            <Overload retVal=""  descr="&#x0a;The READNEXT statement is extended in two ways. Firstly it can accept an index&#x0a;variable create with an OPENINDEX statement. Secondly, you can use the KEY&#x0a;modifier.">
+                <Param name="READNEXT KEY index.key{,record.key{,vmcount}} {FROM select-def} THEN|ELSE"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="READPREV" func="yes">
+            <Overload retVal=""  descr="&#x0a;This statement is syntactically similar to the READNEXT but it works in reverse&#x0a;order.">
+                <Param name="READPREV var1, var2 {FROM var3} {SETTING setvar} {THEN|ELSE stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="READSEQ" func="yes">
+            <Overload retVal=""  descr="&#x0a;Read from a file opened for sequential access.">
+                <Param name="READSEQ var FROM FileVar {SETTING setvar} {ON ERROR stmts} THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="READT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The READT statement is used to read a range of tape devices 0-9.">
+                <Param name="READT var {FROM exprn} THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="READU" func="yes">
+            <Overload retVal=""  descr="&#x0a;The READU statement allows a program to read a record from a previously opened&#x0a;file into a variable. It respects record locking and locks the specified record&#x0a;for update.">
+                <Param name="READU var1 FROM {var2,} exprn {SETTING setvar} {ON ERROR stmts} {LOCKED stmts} THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="READV" func="yes">
+            <Overload retVal=""  descr="&#x0a;The READV statement allows a program to read a specific field from a record in&#x0a;a previously opened file into a variable.">
+                <Param name="READV var1 FROM {var2,} exprn1,exprn2 {SETTING setvar} {ON ERROR stmts} THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="READVU" func="yes">
+            <Overload retVal=""  descr="&#x0a;The READVU statement allows a program to read a specific field in a record in a&#x0a;previously opened file into a variable. It also respects record locking and&#x0a;locks the specified record for update.">
+                <Param name="READVU var1 FROM {var2,} exprn1,exprn2 {SETTING setvar} {ON ERROR stmts} {LOCKED stmts} THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="READXML" func="yes">
+            <Overload retVal=""  descr="&#x0a;The READXML statement reads a record from a file using the style sheet held in&#x0a;DICT-&gt; @ READXML to transform the data into XML format. NOTE: This statement is&#x0a;only available in jBASE 4.1 and later.">
+                <Param name="READXML rec FROM file, id ELSE STOP 202, id"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="RECORDLOCKED" func="yes">
+            <Overload retVal=""  descr="&#x0a;The RECORDLOCKED function can be called to ascertain the status of a record&#x0a;lock.">
+                <Param name="filevar"/>
+                <Param name="recordkey"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="REGEXP" func="yes">
+            <Overload retVal=""  descr="&#x0a;The REGEXP function is a powerful function that allows pattern matching using&#x0a;UNIX regular expressions. REGEXP is not supported on Windows.">
+                <Param name="var"/>
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="RELEASE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The RELEASE statement explicitly releases record locks without updating the&#x0a;records using a WRITE or DELETE and it also clears all execution locks without&#x0a;issuing an UNLOCK.">
+                <Param name="RELEASE {{var,} exprn}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="REM" func="yes">
+            <Overload retVal=""  descr="&#x0a;The MOD and REM functions return the arithmetic modulo (remainder) of two&#x0a;numeric expressions.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="REMOVE" func="yes">
+            <Overload retVal=""  descr="&#x0a;REMOVE will successively extract delimited strings from a dynamic array.">
+                <Param name="REMOVE var FROM array SETTING setvar"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="REPLACE" func="yes">
+            <Overload retVal=""  descr="&#x0a;This is an obsolete way to assign to dynamic arrays via a function.">
+                <Param name="var"/>
+                <Param name="exprn1"/>
+                <Param name="{exprn2}"/>
+                <Param name="{exprn3}"/>
+                <Param name="exprn4"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="RETURN" func="yes">
+            <Overload retVal=""  descr="&#x0a;The RETURN statement transfers program execution to the caller of a&#x0a;subroutine/function or to a specific label in the program.">
+                <Param name="RETURN {TO label | exprn}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="REWIND" func="yes">
+            <Overload retVal=""  descr="&#x0a;The REWIND statement will issue a rewind command to the device attached to the&#x0a;specified channel.">
+                <Param name="REWIND {ON exprn} THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="RIGHT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The RIGHT function returns a sub-string composed of the last n characters of a&#x0a;specified string.">
+                <Param name="exprn"/>
+                <Param name="length"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="RND" func="yes">
+            <Overload retVal=""  descr="&#x0a;The RND function allows the generation of random numbers by a program.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="RTNDATA" func="yes">
+            <Overload retVal=""  descr="&#x0a;The RTNDATA statement allows a jBC program to return specific data to the&#x0a;RTNDATA clause of another program's EXECUTE statement.">
+                <Param name="RTNDATA exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SADD" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SADD function performs string addition of two base 10 string numbers.">
+                <Param name="expr1"/>
+                <Param name="expr2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SDIV" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SDIV function performs string division of two base 10 string numbers. The&#x0a;result is rounded to 14 decimal places.">
+                <Param name="expr1"/>
+                <Param name="expr2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SEEK" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SEEK statement moves a file pointer by an offset specified in bytes,&#x0a;relative to the current position, the beginning of the file, or the end of the&#x0a;file.">
+                <Param name="SEEK file.var [,offset [,relto]] {THEN stmts [ELSE stmts] | ELSE stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SELECT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SELECT statement creates a select list of elements in a specified variable&#x0a;for use with the READNEXT statement.">
+                <Param name="SELECT {var1} {TO var2 | listnum} {SETTING setvar}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SELECTINDEX" func="yes">
+            <Overload retVal=""  descr="&#x0a;This statement will create a dynamic array of record keys based on a single&#x0a;selection of a single index key value.">
+                <Param name="SELECTINDEX index-name{,index-key} FROM file-var {TO select-var}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SEND" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SEND statement sends a block of data directly to a device.">
+                <Param name="SEND output {:} TO FileVar THEN | ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SENTENCE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SENTENCE function allows a program to find out the command used to invoke&#x0a;it and the arguments it was given.">
+                <Param name="{exprn}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SEQ" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SEQ function returns numeric ASCII value of a character.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SEQS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SEQS function converts a dynamic array of ASCII characters to their numeric&#x0a;string equivalents.">
+                <Param name="dynamic.array"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SIN" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SIN function returns the mathematical sine value of a numeric expression.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SLEEP" func="yes">
+            <Overload retVal=""  descr="&#x0a;Allows the program to pause execution for a specified time period.">
+                <Param name="SLEEP {exprn}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SMUL" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SMUL function performs string multiplication of two base 10 string numbers.">
+                <Param name="expr1"/>
+                <Param name="expr2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SORT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SORT function sorts all elements of a dynamic array in ascending&#x0a;left-justified order.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SOUNDEX" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SOUNDEX function allows phonetic conversions of strings.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SPACE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SPACE function is a convenient way to generate a specific number of ASCII&#x0a;space characters.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SPACES" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SPACES function returns a dynamic array with elements composed of blank&#x0a;spaces.">
+                <Param name="dynamic.array"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SPLICE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SPLICE function returns a dynamic array of the element by element&#x0a;concatenation of two dynamic arrays.">
+                <Param name="array1"/>
+                <Param name="exprn"/>
+                <Param name="array2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SPOOLER" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SPOOLER function returns information from the jBASE spooler.">
+                <Param name="n"/>
+                <Param name="{Port}"/>
+                <Param name="{User}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SQRT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SQRT function returns the mathematical square root of a value.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SQUOTE" func="yes">
+            <Overload retVal=""  descr="&#x0a;These function will put a single quotation mark and the beginning and end of a&#x0a;string.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SSELECT" func="yes">
+            <Overload retVal=""  descr="&#x0a;Use the SSELECT statement to create: A numbered select list of record IDs in&#x0a;sorted order from a jBASE hashed file.">
+                <Param name="SSELECT [var] [TO list.number] [ON ERROR stmts]"/>
+            </Overload>
+            <Overload retVal=""  descr="&#x0a;Use the SSELECT statement to create: A numbered select list of record IDs from&#x0a;a dynamic array.">
+                <Param name="SSELECTN [var] [TO list.number] [ON ERROR stmts]"/>
+            </Overload>
+            <Overload retVal=""  descr="&#x0a;Use the SSELECT statement to create: A select list of record IDs from a dynamic&#x0a;array is not in sorted order.">
+                <Param name="SSELECTV [var] TO list.var [ON ERROR stmts]"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SSUB" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SSUB function performs string subtraction of two base 10 string numbers.">
+                <Param name="expr1"/>
+                <Param name="expr2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="STATUS" func="yes">
+            <Overload retVal=""  descr="&#x0a;Use the STATUS function after an OPENPATH statement to find the cause of a file&#x0a;open failure (that is, for a statement in which the ELSE clause is used).">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="STOP" func="yes">
+            <Overload retVal=""  descr="&#x0a;The STOP statement is virtually identical in function to the ABORT statement&#x0a;except that a calling jCL program will not be terminated.">
+                <Param name="STOP {message.number{, exprn ...}}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="STR" func="yes">
+            <Overload retVal=""  descr="&#x0a;The STR function allows the duplication of a string a number of times.">
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="STRS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The STRS function produces a dynamic array containing the specified number of&#x0a;repetitions of each element of a dynamic array.">
+                <Param name="dynamic.array"/>
+                <Param name="repeat"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SUBROUTINE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SUBROUTINE statement is used at the start of any program that will be&#x0a;called externally by the CALL statement. It also declares any parameters to the&#x0a;compiler.">
+                <Param name="SUB{ROUTINE} Name {({MAT} var{,{MAT} var...})}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SUBS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SUBS function returns a dynamic array by subtracting each element of the&#x0a;second dynamic array from the corresponding element of the first dynamic array.">
+                <Param name="DynArr1"/>
+                <Param name="DynArr2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SUBSTRINGS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SUBSTRINGS function returns a dynamic array of elements which are&#x0a;sub-strings of the corresponding elements in a supplied dynamic array.">
+                <Param name="DynArr"/>
+                <Param name="Start"/>
+                <Param name="Length"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SUM" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SUM function sums numeric elements in a dynamic array.">
+                <Param name="expr"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SWAP" func="yes">
+            <Overload retVal=""  descr="&#x0a;The SWAP function operates on a variable and replaces all occurrences of one&#x0a;string with another.">
+                <Param name="var"/>
+                <Param name="exprn1"/>
+                <Param name="exprn2"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="SYSTEM" func="yes">
+            <Overload retVal=""  descr="&#x0a;Returns system information.">
+                <Param name="num"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TAN" func="yes">
+            <Overload retVal=""  descr="&#x0a;The TAN function returns the mathematical tangent of an angle.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TIME" func="yes">
+            <Overload retVal=""  descr="&#x0a;The TIME() function returns the current system time.">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TIMEDATE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The TIMEDATE() function returns the current time and date as a printable&#x0a;string.">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TIMEDIFF" func="yes">
+            <Overload retVal=""  descr="&#x0a;The TIMEDIFF function returns the interval between two timestamp values as a&#x0a;dynamic array. NOTE: This function is only available in jBASE 4.1 and later.">
+                <Param name="Timestamp1"/>
+                <Param name="Timestamp2"/>
+                <Param name="Mask"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TIMEOUT" func="yes">
+            <Overload retVal=""  descr="&#x0a;The TIMEOUT statement terminates a READBLK or READSEQ statement.">
+                <Param name="TIMEOUT file.var, time"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TIMESTAMP" func="yes">
+            <Overload retVal=""  descr="&#x0a;The TIMESTAMP function returns a UTC timestamp value as decimal seconds. NOTE:&#x0a;This function is only available in jBASE 4.1 or later.">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TRANS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The TRANS function will return the data value of a field, given the name of the&#x0a;file, the record key, the field number, and an action code.">
+                <Param name="[DICT] filename"/>
+                <Param name="key"/>
+                <Param name="field#"/>
+                <Param name="action.code"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TRANSABORT" func="yes">
+            <Overload retVal=""  descr="&#x0a;This statement is used to abort the current transaction and reverse any updates&#x0a;to the database.">
+                <Param name="TRANSABORT {abort-text} [THEN stmt | ELSE stmt]"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TRANSEND" func="yes">
+            <Overload retVal=""  descr="&#x0a;This statement is used to mark the end of a successfully completed transaction.">
+                <Param name="TRANSEND {end-text} [THEN stmt | ELSE stmt]"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TRANSQUERY" func="yes">
+            <Overload retVal=""  descr="&#x0a;This function is used to detect whether or not a transaction is active on the&#x0a;current process.">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TRANSTART" func="yes">
+            <Overload retVal=""  descr="&#x0a;In transaction processing, this statement is used to mark the beginning of a&#x0a;transaction.">
+                <Param name="TRANSTART {SYNC}{start-text} [THEN stmt | ELSE stmt]"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TRIM" func="yes">
+            <Overload retVal=""  descr="&#x0a;The TRIM statement allows characters to be removed from a string in a number of&#x0a;ways.">
+                <Param name="exprn1"/>
+                <Param name="{exprn2}"/>
+                <Param name="{exprn3}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TRIMB" func="yes">
+            <Overload retVal=""  descr="&#x0a;The TRIMB() function is equivalent to TRIM(expression, ' ' , 'T' ).">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TRIMBS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The TRIMBS removes all trailing spaces and tabs from each element of a dynamic&#x0a;array.">
+                <Param name="dynamic.array"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TRIMF" func="yes">
+            <Overload retVal=""  descr="&#x0a;The TRIMF() function is equivalent to TRIM(expression, ' ' , 'L' ).">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="TRIMFS" func="yes">
+            <Overload retVal=""  descr="&#x0a;The TRIMFS removes all leading, trailing and redundant spaces and tabs from&#x0a;each element of a dynamic array.">
+                <Param name="dynamic.array"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="UNASSIGNED" func="yes">
+            <Overload retVal=""  descr="&#x0a;The UNASSIGNED function allows a program to determine whether a variable has&#x0a;been assigned a value.">
+                <Param name="var"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="UNIQUEKEY" func="yes">
+            <Overload retVal=""  descr="&#x0a;The UNIQUEKEY function returns a unique 16-byte character key. NOTE: This&#x0a;function is only available in jBASE 4.1 and later">
+            </Overload>
+        </KeyWord>
+        <KeyWord name="UNLOCK" func="yes">
+            <Overload retVal=""  descr="&#x0a;The UNLOCK statement releases a previously LOCKed execution lock.">
+                <Param name="UNLOCK {exprn}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="UPCASE" func="yes">
+            <Overload retVal=""  descr="&#x0a;UPCASE converts all lowercase characters in an expression to uppercase&#x0a;characters.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="UTF8" func="yes">
+            <Overload retVal=""  descr="&#x0a;The UTF8 function converts a latin1 or binary string into the UTF-8 equivalent&#x0a;byte sequence. NOTE: This function is only available in jBASE 4.1 or later.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="WAKE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The WAKE statement is used to wake a suspended process which has executed a&#x0a;PAUSE statement.">
+                <Param name="WAKE PortNumber"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="WEOF" func="yes">
+            <Overload retVal=""  descr="&#x0a;The WEOF statement allows the program to write an EOF mark on an attached tape&#x0a;device.">
+                <Param name="WEOF {ON exprn}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="WEOFSEQ" func="yes">
+            <Overload retVal=""  descr="&#x0a;Write end of file on file opened for sequential access.">
+                <Param name="WEOFSEQ FileVar { THEN | ELSE Statements}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="WRITE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The WRITE statement allows a program to write a record into a previously opened&#x0a;file.">
+                <Param name="WRITE var1 ON|TO { var2,} exprn {SETTING setvar} {ON ERROR stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="WRITEBLK" func="yes">
+            <Overload retVal=""  descr="&#x0a;The WRITEBLK statement writes a block of data to a file opened for sequential&#x0a;processing.">
+                <Param name="WRITEBLK exprn ON file.var {THEN stmts [ELSE stmts]|ELSE stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="WRITELIST" func="yes">
+            <Overload retVal=""  descr="&#x0a;WRITELIST allows the program to store a list held in a jBC variable to the&#x0a;global list file.">
+                <Param name="WRITELIST var ON|TO exprn {SETTING setvar} {ON ERROR stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="WRITESEQ" func="yes">
+            <Overload retVal=""  descr="&#x0a;Write to a file opened for sequential access.">
+                <Param name="WRITESEQ Expression {APPEND} ON|TO FileVar THEN | ELSE stmts"/>
+            </Overload>
+            <Overload retVal=""  descr="&#x0a;Write to a file opened for sequential access.">
+                <Param name="WRITESEQF Expression {APPEND} ON|TO FileVar THEN | ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="WRITET" func="yes">
+            <Overload retVal=""  descr="&#x0a;The WRITET statement enables data to be written to a range of tape devices&#x0a;between 0-9.">
+                <Param name="WRITET var {ON|TO exprn} THEN|ELSE stmts"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="WRITEU" func="yes">
+            <Overload retVal=""  descr="&#x0a;The WRITEU statement allows a program to write a record into a previously&#x0a;opened file. An existing record lock will be preserved.">
+                <Param name="WRITEU var1 ON|TO { var2,} exprn {SETTING setvar} {ON ERROR stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="WRITEV" func="yes">
+            <Overload retVal=""  descr="&#x0a;The WRITEV statement allows a program to write a specific field of a record in&#x0a;a previously opened file.">
+                <Param name="WRITEV var1 ON|TO {var2,} exprn1, exprn2 {SETTING setvar} {ON ERROR stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="WRITEVU" func="yes">
+            <Overload retVal=""  descr="&#x0a;The WRITEVU statement allows a program to write a specific field on a record in&#x0a;a previously opened file. An existing record lock will be preserved.">
+                <Param name="WRITEVU var1 ON|TO { var2,} exprn1, exprn2 {SETTING setvar} {ON ERROR stmts}"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="WRITEXML" func="yes">
+            <Overload retVal=""  descr="&#x0a;The WRITEXML statement writes a dynamic array to a hashed file in XML format,&#x0a;using a style sheet from the DICT. NOTE: This function is only available in&#x0a;jBASE 4.1 and later.">
+                <Param name="WRITEXML rec ON file,id ELSE STOP 201,id"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="XLATE" func="yes">
+            <Overload retVal=""  descr="&#x0a;The XLATE function will return the data value of a field, given the name of the&#x0a;file, the record key, the field number, and an action code.">
+                <Param name="[DICT] filename"/>
+                <Param name="key"/>
+                <Param name="field#"/>
+                <Param name="action.code"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="XMLTODYN" func="yes">
+            <Overload retVal=""  descr="&#x0a;The XMLTODYN converts an XML expression to a dynamic array, using an optional&#x0a;XSL to transform. NOTE: This function is only available in jBASE 4.1 and later.">
+                <Param name="XML"/>
+                <Param name="XSL"/>
+                <Param name="result"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="XMLTOXML" func="yes">
+            <Overload retVal=""  descr="&#x0a;The XMLTOXML function transforms an XML expression using an XSL. NOTE: This&#x0a;function is only available in jBASE 4.1 and later.">
+                <Param name="XML"/>
+                <Param name="XSL"/>
+                <Param name="result"/>
+            </Overload>
+        </KeyWord>
+        <KeyWord name="XTD" func="yes">
+            <Overload retVal=""  descr="&#x0a;The XTD function converts hexadecimal number into its decimal equivalent.">
+                <Param name="exprn"/>
+            </Overload>
+        </KeyWord>
+    </AutoComplete>
+</NotepadPlus>
